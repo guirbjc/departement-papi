@@ -55,6 +55,12 @@ export default function InvertedGame({ data }) {
     setShowAnswer(false);
   };
 
+  const handleInputKeyDown = (e) => {
+  if (e.key === 'Enter' && !showAnswer) {
+    handleCheck();
+  }
+};
+
   return (
     <main>
       <div id="invertedGame-container" ref={containerRef}>
@@ -75,6 +81,7 @@ export default function InvertedGame({ data }) {
               onChange={handleInputChange}
               onFocus={scrollToTop}
               onClick={scrollToTop}
+              onKeyDown={handleInputKeyDown}
               disabled={showAnswer}
             />
 
