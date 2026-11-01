@@ -17,7 +17,7 @@ export default function HeaderApp() {
 
       <div className="header-buttons">
         <Link className="my-linkbutton full-link" to="/Dep">Les départements</Link>
-        <Link className="my-linkbutton full-link" to="/Game">C'est quel département ?</Link>
+        <Link className="my-linkbutton full-link" to="/Game">Les mini-jeux</Link>
       </div>
     </div>
   );
