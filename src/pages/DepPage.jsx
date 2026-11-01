@@ -80,7 +80,7 @@ export default function DepPage() {
       ? "2A"
       : departement.name === "la Haute-Corse"
       ? "2B"
-      : departement.number;
+      : String(departement.number).padStart(2, "0");
 
   const renderDepCard = (dep) => {
     return dep ? <DepCard key={dep.number} departement={dep} /> : null;
