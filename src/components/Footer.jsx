@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div id="footer-container">
             <div>
-               <Link className="h3-footer" to="/">Guilhem Rebéjac © 2025</Link>
+               <Link className="h3-footer" to="/">Guilhem Rebéjac © {new Date().getFullYear()}</Link>
             </div>
         </div>
     );
