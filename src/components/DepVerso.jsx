@@ -27,7 +27,7 @@ export default function DepVerso({ departement }) {
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
         >
-          Site touristique officiel
+          {new URL(info.tourismUrl).hostname.replace(/^www\./, "")}
         </a>
       )}
     </div>
