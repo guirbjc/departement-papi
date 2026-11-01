@@ -18,6 +18,23 @@
     display: none;
 }
 
+.input-zone-name > button {
+    order: 1;
+}
+
+.input-zone-name .quiz-answer {
+    order: 2;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+#invertedGame-container .keypad-key:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
 @media screen and (max-width: 768px), (pointer: coarse) {
     .num-keypad {
         display: grid;
