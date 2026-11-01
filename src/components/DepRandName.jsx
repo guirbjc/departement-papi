@@ -12,6 +12,13 @@ export default function InvertedGame({ data }) {
 
   const departement = data[randomNumber];
 
+  const getCorrectCode = (number) => {
+    if (number === 2.1) return '2A';
+    if (number === 2.2) return '2B';
+    return number.toString();
+  };
+
+  const displayedAnswer = getCorrectCode(departement.number);
   const maxLength = displayedAnswer.length;   // 2 ou 3 selon le département
 
   const handleInputChange = (e) => {
@@ -34,17 +41,10 @@ export default function InvertedGame({ data }) {
     }
   };
 
-  const getCorrectCode = (number) => {
-    if (number === 2.1) return '2A';
-    if (number === 2.2) return '2B';
-    return number.toString();
-  };
-
   const handleCheck = () => {
     const cleanedInput = userInput.trim().toUpperCase();
-    const correctCode = getCorrectCode(departement.number);
 
-    setIsCorrect(cleanedInput === correctCode);
+    setIsCorrect(cleanedInput === displayedAnswer);
     setShowAnswer(true);
   };
 
@@ -54,8 +54,6 @@ export default function InvertedGame({ data }) {
     setIsCorrect(null);
     setShowAnswer(false);
   };
-
-  const displayedAnswer = getCorrectCode(departement.number);
 
   return (
     <main>
@@ -79,7 +77,7 @@ export default function InvertedGame({ data }) {
               onClick={scrollToTop}
               disabled={showAnswer}
             />
-          
+
             {showAnswer && (
               <div className={`quiz-answer ${isCorrect ? 'correct' : 'wrong'}`}>
                 {isCorrect ? (
@@ -89,7 +87,7 @@ export default function InvertedGame({ data }) {
                 )}
               </div>
             )}
-          
+
             <div className="num-keypad">
               {KEYS.map((key) => (
                 <button
@@ -112,7 +110,7 @@ export default function InvertedGame({ data }) {
                 ⌫
               </button>
             </div>
-          
+
             {!showAnswer ? (
               <button onClick={handleCheck}>Valider</button>
             ) : (
