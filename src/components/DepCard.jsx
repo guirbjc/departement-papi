@@ -1,21 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DepCard.css";
 import { Link } from "react-router-dom";
+import DepVerso from "./DepVerso";
+import useIsMobile from "../useIsMobile";
+import { getDisplayNumber } from "../utils";
 
 export default function DepCard({ departement }) {
+  const isMobile = useIsMobile();
+  const [flipped, setFlipped] = useState(false);
+  const displayNumber = getDisplayNumber(departement);
 
-  const displayNumber =
-    departement.name === "la Corse-du-Sud"
-      ? "2A"
-      : departement.name === "la Haute-Corse"
-      ? "2B"
-      : String(departement.number).padStart(2, "0");
-
-  return (
-    <Link
-      to={`/departement/${departement.number}`}
-      className="departement-card"
-    >
+  const front = (
+    <>
       <img
         className="departement-picture"
         src={`${import.meta.env.BASE_URL}${departement.number}${departement.alias}.jpg`}
@@ -32,6 +28,41 @@ export default function DepCard({ departement }) {
           Région : <span className="highlight-region">{departement.adminRegion}</span>
         </p>
       </div>
-    </Link>
+    </>
+  );
+
+  // PC : comportement habituel, lien vers la page à 3 cartes
+  if (!isMobile) {
+    return (
+      <Link to={`/departement/${departement.number}`} className="departement-card">
+        {front}
+      </Link>
+    );
+  }
+
+  // Mobile : la carte se retourne sur place
+  const toggle = () => setFlipped((f) => !f);
+
+  return (
+    <div
+      className={`departement-card flip-card ${flipped ? "is-flipped" : ""}`}
+      role="button"
+      tabIndex={0}
+      aria-pressed={flipped}
+      onClick={toggle}
+      onKeyDown={(e) => {
+        if (e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) {
+          e.preventDefault();
+          toggle();
+        }
+      }}
+    >
+      <div className="flip-inner">
+        <div className="flip-face flip-front">{front}</div>
+        <div className="flip-face flip-back">
+          <DepVerso departement={departement} />
+        </div>
+      </div>
+    </div>
   );
 }
