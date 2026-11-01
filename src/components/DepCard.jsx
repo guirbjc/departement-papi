@@ -18,7 +18,7 @@ export default function DepCard({ departement }) {
     >
       <img
         className="departement-picture"
-        src={`/${departement.number}${departement.alias}.jpg`}
+        src={`${import.meta.env.BASE_URL}${departement.number}${departement.alias}.jpg`}
         alt={departement.name}
       />
       <div className="departement-description">

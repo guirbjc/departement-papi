@@ -107,7 +107,7 @@ export default function DepPage() {
           </h1>
           <img
             className="departement-page-picture"
-            src={`/${departement.number}${departement.alias}.jpg`}
+            src={`${import.meta.env.BASE_URL}${departement.number}${departement.alias}.jpg`}
             alt={departement.name}
           />
           <div className="departement-page-description">
