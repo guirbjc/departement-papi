@@ -15,7 +15,7 @@ export default function InvertedGame({ data }) {
   const getCorrectCode = (number) => {
     if (number === 20.1) return '2A';
     if (number === 20.2) return '2B';
-    return number.toString();
+    return String(number).padStart(2, '0');
   };
 
   const displayedAnswer = getCorrectCode(departement.number);
