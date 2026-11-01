@@ -1,5 +1,5 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function HeaderApp() {
   return (
@@ -16,8 +16,8 @@ export default function HeaderApp() {
       <Link className="h1-header" to="/">C'est quel département Papi ?</Link>
 
       <div className="header-buttons">
-        <Link className="my-linkbutton full-link" to="/Dep">Les départements</Link>
-        <Link className="my-linkbutton full-link" to="/Game">Les mini-jeux</Link>
+        <NavLink className="my-linkbutton full-link" to="/Dep">Les départements</NavLink>
+        <NavLink className="my-linkbutton full-link" to="/Game">C'est quel département ?</NavLink>
       </div>
     </div>
   );
