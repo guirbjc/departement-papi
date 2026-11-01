@@ -13,8 +13,8 @@ export default function InvertedGame({ data }) {
   const departement = data[randomNumber];
 
   const getCorrectCode = (number) => {
-    if (number === 2.1) return '2A';
-    if (number === 2.2) return '2B';
+    if (number === 20.1) return '2A';
+    if (number === 20.2) return '2B';
     return number.toString();
   };
 
@@ -62,7 +62,7 @@ export default function InvertedGame({ data }) {
 
         <div className="quiz-card">
           <div className="quiz-question">
-            « <span className="highlight">{departement.name}</span>, quel est son numéro ? »
+            <span className="highlight">{departement.name}</span>, quel est son numéro ?
           </div>
 
           <div className="input-zone-name">
