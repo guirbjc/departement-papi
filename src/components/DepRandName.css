@@ -172,8 +172,8 @@
     }
 
     .quiz-answer {
-        margin-top: 28px;
-        margin-bottom: 8px;
+        font-size: 1rem;
+        padding: 12px;
     }
 }
 
