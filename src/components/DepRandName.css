@@ -42,6 +42,16 @@
         gap: 8px;
         width: 100%;
         max-width: 300px;
+        order: 2;
+    }
+
+    .input-zone-name .quiz-answer {
+        order: 1;
+        max-width: 300px;
+    }
+
+    .input-zone-name > button {
+        order: 3;
     }
 }
 
@@ -240,7 +250,7 @@
     }
 
     #invertedGame-container {
-        margin: 15px 4vw;
+        margin: 15px 0;
         padding: 4vh 8vw;
     }
 }
