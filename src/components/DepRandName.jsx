@@ -77,46 +77,46 @@ export default function InvertedGame({ data }) {
               onClick={scrollToTop}
               disabled={showAnswer}
             />
-
-            {!showAnswer && (
-              <div className="num-keypad">
-                {KEYS.map((key) => (
-                  <button
-                    key={key}
-                    type="button"
-                    className={`keypad-key ${key === 'A' || key === 'B' ? 'keypad-letter' : ''}`}
-                    onClick={() => handleKey(key)}
-                  >
-                    {key}
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  className="keypad-key keypad-back"
-                  onClick={handleBackspace}
-                  aria-label="Effacer"
-                >
-                  ⌫
-                </button>
+          
+            {showAnswer && (
+              <div className={`quiz-answer ${isCorrect ? 'correct' : 'wrong'}`}>
+                {isCorrect ? (
+                  <>✅ Bravo ! C’est bien le département <strong>{displayedAnswer}</strong>.</>
+                ) : (
+                  <>❌ Eh non… c’était le <strong>{displayedAnswer}</strong>.</>
+                )}
               </div>
             )}
-
+          
+            <div className="num-keypad">
+              {KEYS.map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={`keypad-key ${key === 'A' || key === 'B' ? 'keypad-letter' : ''}`}
+                  onClick={() => handleKey(key)}
+                  disabled={showAnswer}
+                >
+                  {key}
+                </button>
+              ))}
+              <button
+                type="button"
+                className="keypad-key keypad-back"
+                onClick={handleBackspace}
+                aria-label="Effacer"
+                disabled={showAnswer}
+              >
+                ⌫
+              </button>
+            </div>
+          
             {!showAnswer ? (
               <button onClick={handleCheck}>Valider</button>
             ) : (
               <button onClick={handleNext}>Nouveau tirage</button>
             )}
           </div>
-
-          {showAnswer && (
-            <div className={`quiz-answer ${isCorrect ? 'correct' : 'wrong'}`}>
-              {isCorrect ? (
-                <>✅ Bravo ! C’est bien le département <strong>{displayedAnswer}</strong>.</>
-              ) : (
-                <>❌ Eh non… c’était le <strong>{displayedAnswer}</strong>.</>
-              )}
-            </div>
-          )}
         </div>
       </div>
     </main>
