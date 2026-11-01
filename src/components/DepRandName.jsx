@@ -12,13 +12,15 @@ export default function InvertedGame({ data }) {
 
   const departement = data[randomNumber];
 
+  const maxLength = displayedAnswer.length;   // 2 ou 3 selon le département
+
   const handleInputChange = (e) => {
-    setUserInput(e.target.value.toUpperCase().slice(0, 2));
+    setUserInput(e.target.value.toUpperCase().slice(0, maxLength));
   };
 
-  // Clavier intégré : ajoute une touche (2 caractères maximum)
+  // Clavier intégré : ajoute une touche (limite selon le département)
   const handleKey = (key) => {
-    setUserInput((prev) => (prev + key).slice(0, 2));
+    setUserInput((prev) => (prev + key).slice(0, maxLength));
   };
 
   const handleBackspace = () => {
