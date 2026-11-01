@@ -2,35 +2,6 @@ import { useState } from "react";
 import "./DepRandom.css";
 import { Link } from "react-router-dom";
 
-// export default function HeaderApp({ data }) {
-//     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random()*data.length));
-//     const [activNumber, setActivNumber] = useState(0);
-//     const counter = () => setActivNumber((oldActivNumber) => {
-//         console.log(oldActivNumber);
-//             if (oldActivNumber == 3) {
-//                 return 0;
-//             } else {
-//                 return oldActivNumber + 1;
-//             }
-//         });
-    
-//     return <main>
-//         <div id="randomGame-container">
-//             <h1 className="h1-random">C'est quel département le {data[randomNumber].number}{data[randomNumber].alias} papi ?</h1>
-//             <div className="randomGame-div-center">
-//                 <div>{activNumber >= 1 && (<h2 className="h2-random">C'est {data[randomNumber].name} !</h2>)}</div>
-//                 <div>{activNumber >= 1 && (<h3 className="h3-random">Et c'est quoi son chef-lieu ?</h3>)}</div>
-//                 <div>{activNumber >= 2 && (<h2 className="h2-random">{data[randomNumber].capital} bien sûr !</h2>)}</div>
-//                 <div>{activNumber >= 2 && (<h3 className="h3-random">Et sa région ?</h3>)}</div>
-//                 <div>{activNumber >= 3 && (<h2 className="h2-random">{data[randomNumber].adminRegion} !</h2>)}</div>
-            
-//             </div>
-//             <div><button onClick={counter} id="my-button" style={{ cursor: 'pointer' }}>Solution</button></div>
-//         </div>
-//     </main>
-// }
-
-
 export default function HeaderApp({ data }) {
   const getRandomDepartment = () => data[Math.floor(Math.random() * data.length)];
   const [departement, setDepartement] = useState(getRandomDepartment());
@@ -50,7 +21,7 @@ export default function HeaderApp({ data }) {
       ? "2A"
       : departement.name === "la Haute-Corse"
       ? "2B"
-      : departement.number;
+      : String(departement.number).padStart(2, "0");
 
   return (
     <main>
