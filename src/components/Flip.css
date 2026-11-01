@@ -3,6 +3,8 @@
     display: grid;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
+    -webkit-transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .is-flipped > .flip-inner {
@@ -53,24 +55,30 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 6px;
+    transition: box-shadow 0.2s ease;
     overflow: hidden;
 }
 
 /* Carte centrale (PC) */
 .departement-page-flip {
     perspective: 1200px;
-    width: 100%;
-    max-width: 480px;          /* à ajuster selon votre mise en page */
+    flex: 0 0 auto;
+    margin: 25px 4vw;          /* les marges de l'ancienne carte */
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s ease;
+}
+
+.departement-page-flip:hover {
+    transform: scale(1.03);
 }
 
 .departement-page-flip .flip-face > .departement-page {
-    width: 100%;
-    max-width: none;
-    height: 100%;
     margin: 0;
-    box-sizing: border-box;
+}
+
+.departement-page-flip .departement-page:hover {
+    transform: none;
 }
 
 .departement-page-back {
@@ -151,4 +159,13 @@
 
 .verso-link:active {
     transform: scale(0.97);
+}
+
+.departement-card.flip-card:hover {
+    transform: scale(1.03);
+    box-shadow: none;
+}
+
+.departement-card.flip-card:hover .flip-face {
+    box-shadow: 0px 0px 10px 0px rgb(0, 172, 172);
 }
