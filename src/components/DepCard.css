@@ -82,7 +82,8 @@
 
     .departement-card {
         width: 100%;
-        max-width: 360px;
+        max-width: 350px;
+        box-sizing: border-box; 
         height: auto;
         padding: 16px;
         gap: 6px;
