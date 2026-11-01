@@ -1,6 +1,6 @@
 const departementsData = [
   {
-    number: 01,
+    number: 1,
     alias: "",
     name: "l'Ain",
     capital: "Bourg-en-Bresse",
@@ -8,7 +8,7 @@ const departementsData = [
     codePostal: "01000"
   },
   {
-    number: 02,
+    number: 2,
     alias: "",
     name: "l'Aisne",
     capital: "Laon",
@@ -16,7 +16,7 @@ const departementsData = [
     codePostal: "02000"
   },
   {
-    number: 03,
+    number: 3,
     alias: "",
     name: "l'Allier",
     capital: "Moulins",
@@ -24,7 +24,7 @@ const departementsData = [
     codePostal: "03000"
   },
   {
-    number: 04,
+    number: 4,
     alias: "",
     name: "les Alpes de Haute-Provence",
     capital: "Digne-les-Bains",
@@ -32,7 +32,7 @@ const departementsData = [
     codePostal: "04000"
   },
   {
-    number: 05,
+    number: 5,
     alias: "",
     name: "les Haute-Alpes",
     capital: "Gap",
@@ -40,7 +40,7 @@ const departementsData = [
     codePostal: "05000"
   },
   {
-    number: 06,
+    number: 6,
     alias: "",
     name: "les Alpes-Maritimes",
     capital: "Nice",
@@ -48,7 +48,7 @@ const departementsData = [
     codePostal: "06000"
   },
   {
-    number: 07,
+    number: 7,
     alias: "",
     name: "l'Ardèche",
     capital: "Privas",
@@ -56,7 +56,7 @@ const departementsData = [
     codePostal: "07000"
   },
   {
-    number: 08,
+    number: 8,
     alias: "",
     name: "les Ardennes",
     capital: "Charleville-Mézières",
@@ -64,7 +64,7 @@ const departementsData = [
     codePostal: "08000"
   },
   {
-    number: 09,
+    number: 9,
     alias: "",
     name: "l'Ariège",
     capital: "Foix",
