@@ -58,41 +58,35 @@ export default function HeaderApp({ data }) {
         <div className="randomGame-dialogue">
           {activNumber >= 0 && (
             <div className="dialogue-bubble question first-question">
-              « C’est quel département le{" "}
-              {/* <Link
-                to={`/departement/${departement.number}`}
-                className="link-bubble"
-              > */}
+              C’est quel département le{" "}
                 <span className="highlight dep-number">
                   {displayNumber}
-                  {/* {departement.alias} */}
                 </span>{" "}
-              {/* </Link> */}
-              papi ? »
+              papi ?
             </div>
           )}
 
           {activNumber >= 1 && (
             <>
               <div className="dialogue-bubble answer">
-                « C’est <span className="highlight">{departement.name}</span> bien sûr ! »
+                C’est <span className="highlight">{departement.name}</span> bien sûr !
               </div>
-              <div className="dialogue-bubble question">« Et c’est quoi son chef-lieu ? »</div>
+              <div className="dialogue-bubble question">Et c’est quoi son chef-lieu ?</div>
             </>
           )}
 
           {activNumber >= 2 && (
             <>
               <div className="dialogue-bubble answer">
-                « <span className="highlight">{departement.capital}</span>, évidemment. »
+                <span className="highlight">{departement.capital}</span>, évidemment.
               </div>
-              <div className="dialogue-bubble question">« Et sa région ? »</div>
+              <div className="dialogue-bubble question">Et sa région ?</div>
             </>
           )}
 
           {activNumber >= 3 && (
             <div className="dialogue-bubble answer">
-              « <span className="highlight">{departement.adminRegion}</span>, pardi ! »
+              <span className="highlight">{departement.adminRegion}</span>, pardi !
             </div>
           )}
         </div>
