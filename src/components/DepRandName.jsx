@@ -27,7 +27,7 @@ export default function InvertedGame({ data }) {
 
   // Mobile : cale la div globale en haut de l'écran
   const scrollToTop = () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (window.matchMedia("(max-width: 768px), (pointer: coarse)").matches) {
       containerRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
